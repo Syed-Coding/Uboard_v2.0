@@ -25,7 +25,7 @@ export const IfNoEdittedInput = ({
 
           <span style={{ color: "blue" }}>
             {user_expected_task_completionDays === "tdy" &&
-              `Should be completed On Today`}
+              `Should be completed On TODAY`}
           </span>
           <span style={{ color: "blue" }}>
             {user_expected_task_completionDays !== "tdy" &&
