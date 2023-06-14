@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-
 import { successnotification } from "../userNotifications/userNotifications";
 import { errorNotification } from "../userNotifications/userNotifications";
 export const handleSubmit = (
@@ -11,7 +10,6 @@ export const handleSubmit = (
   setFilterpriorityTaskStatus,
   Addinput,
   switchVal,
-
   priorityCheck,
   setAddTask,
   setpriorityCheck,

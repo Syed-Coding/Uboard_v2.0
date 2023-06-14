@@ -24,5 +24,5 @@ export const handleEditSubmit = (
     });
   });
   setEdittedInputstatus((prev) => !prev);
-  successnotification("TASK EDITTED SUCCESFULLY");
+  successnotification("TASK EDITTED SUCCESSFULLY");
 };

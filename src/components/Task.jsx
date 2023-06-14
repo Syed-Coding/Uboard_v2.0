@@ -49,7 +49,7 @@ const Task = () => {
   const [priorityCheck, setpriorityCheck] = useState(false);
   const [filterprioritytaskStatus, setFilterpriorityTaskStatus] =
     useState(false);
-  const [parent, enableAnimations] = useAutoAnimate();
+  const [parent, enableAnimations] = useAutoAnimate(/* optional config */);
   const [userform, SetUserFom] = useState(valuemainFormCheck);
   const [Hideloginform, setHideloginform] = useState(valueGetFormCheck);
   const [userLgin, SetUserLogin] = useState(valGetuserName);
@@ -233,63 +233,59 @@ const Task = () => {
                 ></InputSwitch>
 
                 <div className="Task-manager-board flex gap-15">
-
-
-                  <div
-                    className="Task-manager-board-col Task-manager-board-left"
-                    ref={parent}
-                  >
+                  <div className="Task-manager-board-col Task-manager-board-left">
                     <OngoingTaskName
                       filterprioritytaskStatus={filterprioritytaskStatus}
                       filteredOngoingArray={filteredOngoingArray}
                     ></OngoingTaskName>
-                    {filterprioritytaskStatus
-                      ? filteredPriorttyOngoingTasks?.map((taskItem) => (
-                          <OngoingTask
-                            taskItem={taskItem}
-                            setAddTask={setAddTask}
-                            key={taskItem.id}
-                            setCele={setCele}
-                          />
-                        ))
-                      : filteredOngoingArray?.map((taskItem) => (
-                          <OngoingTask
-                            taskItem={taskItem}
-                            setAddTask={setAddTask}
-                            key={taskItem.id}
-                            setCele={setCele}
-                          />
-                        ))}
+                    <ul ref={parent}>
+                      {filterprioritytaskStatus
+                        ? filteredPriorttyOngoingTasks?.map((taskItem) => (
+                            <OngoingTask
+                              taskItem={taskItem}
+                              setAddTask={setAddTask}
+                              key={taskItem.id}
+                              setCele={setCele}
+                            />
+                          ))
+                        : filteredOngoingArray?.map((taskItem) => (
+                            <OngoingTask
+                              taskItem={taskItem}
+                              setAddTask={setAddTask}
+                              key={taskItem.id}
+                              setCele={setCele}
+                            />
+                          ))}
+                    </ul>
                   </div>
-                  <div
-                    className="Task-manager-board-col Task-manager-board-right"
-                    ref={parent}
-                  >
+                  <div className="Task-manager-board-col Task-manager-board-right">
                     <DeletedTaskName
                       filterprioritytaskStatus={filterprioritytaskStatus}
                       filtereddeletedArray={filtereddeletedArray}
                     ></DeletedTaskName>
-                    {filterprioritytaskStatus
-                      ? filteredPriorttyCompletedTasks?.map((taskItem) => (
-                          <DeletedTask
-                            taskItem={taskItem}
-                            key={taskItem.id}
-                            setAddTask={setAddTask}
-                            addTask={addTask}
-                            setPoints={setPoints}
-                            setCele={setCele}
-                          />
-                        ))
-                      : filtereddeletedArray?.map((taskItem) => (
-                          <DeletedTask
-                            taskItem={taskItem}
-                            key={taskItem.id}
-                            setAddTask={setAddTask}
-                            addTask={addTask}
-                            setPoints={setPoints}
-                            setCele={setCele}
-                          />
-                        ))}
+                    <ul ref={parent}>
+                      {filterprioritytaskStatus
+                        ? filteredPriorttyCompletedTasks?.map((taskItem) => (
+                            <DeletedTask
+                              taskItem={taskItem}
+                              key={taskItem.id}
+                              setAddTask={setAddTask}
+                              addTask={addTask}
+                              setPoints={setPoints}
+                              setCele={setCele}
+                            />
+                          ))
+                        : filtereddeletedArray?.map((taskItem) => (
+                            <DeletedTask
+                              taskItem={taskItem}
+                              key={taskItem.id}
+                              setAddTask={setAddTask}
+                              addTask={addTask}
+                              setPoints={setPoints}
+                              setCele={setCele}
+                            />
+                          ))}
+                    </ul>
                   </div>
                 </div>
                 <ScrollTop></ScrollTop>
@@ -312,11 +308,10 @@ const Task = () => {
                 />
               </div>
             </div>
-
-            <ToastContainer></ToastContainer>
           </div>
         )}
       </div>
+      <ToastContainer></ToastContainer>
     </>
   );
 };

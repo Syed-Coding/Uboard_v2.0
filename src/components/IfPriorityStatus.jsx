@@ -8,26 +8,31 @@ export const IfPriorityStatus = ({
   reCreated,
 }) => {
   return (
-    <h4
+    <div
       style={{
-        color: "green",
+        background: " #09906c61",
+        borderRadius: "7px",
+        padding: "12px 12px 0px 12px",
+        flex: "1",
       }}
     >
-      <span style={{ wordBreak: "break-word" }}>
-        <h4>{task}</h4>
-      </span>
+      <h4>
+        <span style={{ wordBreak: "break-word" }}>
+          <h4>{task}</h4>
+        </span>
 
-      <span>
-        {delete_date_time
-          ? "Completed " + delete_date_time
-          : "DIRECTLY COMTD. " + accesDateTime(create_date_time)}
-      </span>
-      {delete_date_time && (
-        <>
-          <span>{"Created " + accesDateTime(create_date_time)}</span>
-          <span>{reCreated && "Recreated " + reCreated}</span>
-        </>
-      )}
-    </h4>
+        <span>
+          {delete_date_time
+            ? "Completed " + delete_date_time
+            : "DIRECTLY COMTD. " + accesDateTime(create_date_time)}
+        </span>
+        {delete_date_time && (
+          <>
+            <span>{"Created " + accesDateTime(create_date_time)}</span>
+            <span>{reCreated && "Recreated " + reCreated}</span>
+          </>
+        )}
+      </h4>
+    </div>
   );
 };

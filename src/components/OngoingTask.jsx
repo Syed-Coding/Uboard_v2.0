@@ -25,48 +25,46 @@ export const OngoingTask = ({
 
   return (
     <>
-      <ul>
-        <li className="Task-manager-board-left-container | flex gap-15 align-flex-start">
-          {edittedinputstatus ? (
-            <IfEdittedInput
-              id={id}
-              edittedinput={edittedinput}
-              setEdittedInput={setEdittedInput}
-              setEditted={setEditted}
-              setAddTask={setAddTask}
-              editted={editted}
-              setEdittedInputstatus={setEdittedInputstatus}
-            />
-          ) : (
-            <IfNoEdittedInput
-              priority_status={priority_status}
-              edit_date_time={edit_date_time}
-              reCreated={reCreated}
-              create_date_time={create_date_time}
-              editted={editted}
-              edittedinput={edittedinput}
-              user_expected_task_completionDays={
-                user_expected_task_completionDays
-              }
-            />
-          )}
-          <div className="flex gap-10">
-            <button
-              className="btn btn-edit"
-              onClick={() => handleEdit(setEdittedInputstatus)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn btn-delete"
-              title="Move To Completed Task"
-              onClick={() => handleDelete(id, setAddTask, setCele)}
-            >
-              Done
-            </button>
-          </div>
-        </li>
-      </ul>
+      <li className="Task-manager-board-left-container | flex gap-15 align-flex-start">
+        {edittedinputstatus ? (
+          <IfEdittedInput
+            id={id}
+            edittedinput={edittedinput}
+            setEdittedInput={setEdittedInput}
+            setEditted={setEditted}
+            setAddTask={setAddTask}
+            editted={editted}
+            setEdittedInputstatus={setEdittedInputstatus}
+          />
+        ) : (
+          <IfNoEdittedInput
+            priority_status={priority_status}
+            edit_date_time={edit_date_time}
+            reCreated={reCreated}
+            create_date_time={create_date_time}
+            editted={editted}
+            edittedinput={edittedinput}
+            user_expected_task_completionDays={
+              user_expected_task_completionDays
+            }
+          />
+        )}
+        <div className="flex gap-10">
+          <button
+            className="btn btn-edit"
+            onClick={() => handleEdit(setEdittedInputstatus)}
+          >
+            Edit
+          </button>
+          <button
+            className="btn btn-delete"
+            title="Move To Completed Task"
+            onClick={() => handleDelete(id, setAddTask, setCele)}
+          >
+            Done
+          </button>
+        </div>
+      </li>
     </>
   );
 };

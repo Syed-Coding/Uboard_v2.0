@@ -13,39 +13,43 @@ export const IfNoEdittedInput = ({
   return (
     <>
       {priority_status ? (
-        <h4
+        <div
           style={{
-            color: "green",
-            // style=" background: #09906c61; border-radius: 7px; padding: 12px 12px 0px 12px;"
+            background: " #09906c61",
+            borderRadius: "7px",
+            padding: "12px 12px 0px 12px",
+            flex: "1",
           }}
         >
-          <span style={{ wordBreak: "break-word" }}>
-            <h4>{edittedinput}</h4>
-          </span>
+          <h4>
+            <span style={{ wordBreak: "break-word" }}>
+              <h4>{edittedinput}</h4>
+            </span>
 
-          <span style={{ color: "blue" }}>
-            {user_expected_task_completionDays === "tdy" &&
-              `Should be completed On TODAY`}
-          </span>
-          <span style={{ color: "blue" }}>
-            {user_expected_task_completionDays !== "tdy" &&
-              user_expected_task_completionDays !== 0 &&
-              user_expected_task_completionDays > 0 &&
-              `Should be completed in ${user_expected_task_completionDays} day(s)`}
-          </span>
-          <span style={{ color: "blue" }}>
-            {user_expected_task_completionDays === 0 &&
-              `No Expt. Completion Days Provided`}
-          </span>
-          <span>
-            {editted
-              ? "Editted " + edit_date_time
-              : reCreated
-              ? "Recreated " + reCreated
-              : "Created " + accesDateTime(create_date_time)}
-          </span>
-          <span>{reCreated && editted && "Recreated " + reCreated}</span>
-        </h4>
+            <span style={{ color: "blue" }}>
+              {user_expected_task_completionDays === "tdy" &&
+                `Should be completed On TODAY`}
+            </span>
+            <span style={{ color: "blue" }}>
+              {user_expected_task_completionDays !== "tdy" &&
+                user_expected_task_completionDays !== 0 &&
+                user_expected_task_completionDays > 0 &&
+                `Should be completed in ${user_expected_task_completionDays} day(s)`}
+            </span>
+            <span style={{ color: "blue" }}>
+              {user_expected_task_completionDays === 0 &&
+                `No Expt. Completion Days Provided`}
+            </span>
+            <span>
+              {editted
+                ? "Editted " + edit_date_time
+                : reCreated
+                ? "Recreated " + reCreated
+                : "Created " + accesDateTime(create_date_time)}
+            </span>
+            <span>{reCreated && editted && "Recreated " + reCreated}</span>
+          </h4>
+        </div>
       ) : (
         <h4>
           <span style={{ wordBreak: "break-word" }}>

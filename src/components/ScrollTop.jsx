@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollToTop from "react-scroll-up";
+import { FaAngleUp } from "react-icons/fa";
 
 export const ScrollTop = () => {
   return (
@@ -8,7 +9,7 @@ export const ScrollTop = () => {
         className="scrollTop"
         style={{ color: "white", fontSize: "xxx-large" }}
       >
-        ↑
+        <FaAngleUp className="icon-position icon-style" />
       </span>
     </ScrollToTop>
   );
