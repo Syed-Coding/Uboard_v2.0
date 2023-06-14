@@ -3,7 +3,7 @@ import { OngoingTask } from "./OngoingTask";
 import { DeletedTask } from "./DeletedTask";
 import { useRef } from "react";
 import { FaUserAlt } from "react-icons/fa";
-import { SlLogout } from "react-icons/Sl";
+import { SlLogout } from "react-icons/sl";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
