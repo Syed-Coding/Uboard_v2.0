@@ -3,8 +3,6 @@ import { ToastContainer } from "react-toastify";
 import { errorNotification } from "../userNotifications/userNotifications";
 import { handleUser } from "../handlers/handleUser";
 
-// import { authenticatedUsers } from "../utils/authenticatedUsers";
-
 const PreUserForm = ({
   SetUserFom,
   SetUserLogin,
@@ -31,7 +29,6 @@ const PreUserForm = ({
         ele.user_name.toLowerCase() === loginName.name.toLowerCase() &&
         ele.pass_word === loginName.password
     );
-
     const UserFirstName = loginValue[0]?.user_name;
 
     if (!loginValue[0])
@@ -66,7 +63,7 @@ const PreUserForm = ({
             className="pass"
             placeholder="Password"
             name="password"
-            type="password"
+            type="text"
             value={loginName.password}
             align="center"
             onChange={handelUserInput}

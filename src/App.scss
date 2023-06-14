@@ -256,6 +256,9 @@ a {
 .logout_btn {
   border-radius: 6px;
   height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .resetButton {
   width: 115px;
@@ -291,9 +294,7 @@ a {
     text-align: center;
   }
 }
-.emojiIcon {
-  cursor: pointer;
-}
+
 .dropdownmenuContent {
   width: 220px;
   height: 45px;
@@ -308,7 +309,9 @@ a {
   background-position-x: 98%;
   background-position-y: 10px;
 }
-
+.flex flex-column {
+  width: 100px;
+}
 .buttonSearch {
   margin-bottom: -4px;
   background-color: white;
@@ -338,7 +341,9 @@ a {
   font-size: 36px;
   color: #e5e6e4;
 }
-
+.clock {
+  height: 40px;
+}
 #searchBar {
   position: relative;
   input[type="text"] {
@@ -363,10 +368,12 @@ a {
   border: 1px solid rgb(221, 221, 221);
   border-radius: 2px;
 }
+
 .Task {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 8px;
   padding: 2rem;
+
   &-manager {
     .switchLabel {
       margin-bottom: 1.2rem;
@@ -469,15 +476,36 @@ a {
       border-radius: 7px;
       padding: 12px 12px 0px 12px;
     }
+
     form {
       display: flex;
-      .inputTask {
-        width: 80%;
-        height: 60px;
+      .inputFeildWEmoji {
         border: 1px solid rgb(221, 221, 221);
         border-radius: 32px;
-        padding: 0 22px;
-        font-size: 18px;
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
+        .inputTask {
+          flex: 1;
+          height: 60px;
+          border-radius: 32px;
+          font-size: 18px;
+          border: 1px solid white;
+          outline: none;
+        }
+        .pickerClass {
+          position: absolute;
+          right: 0;
+          top: 45px;
+          background-color: white;
+          z-index: 99;
+        }
+        .emojiIcon {
+          cursor: pointer;
+        }
       }
 
       button {

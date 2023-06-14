@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { accesDateTime } from "../utils/accessDateTime";
+
 import { successnotification } from "../userNotifications/userNotifications";
 import { errorNotification } from "../userNotifications/userNotifications";
 export const handleSubmit = (
@@ -14,12 +14,14 @@ export const handleSubmit = (
 
   priorityCheck,
   setAddTask,
-  setpriorityCheck
+  setpriorityCheck,
+  setCele
 ) => {
   e.preventDefault();
   setsearchQuery("");
   setCompletionDays(0);
   setFilterpriorityTaskStatus(false);
+  setCele(false);
   if (switchVal && priorityCheck) {
     return errorNotification(
       "CANNOT ADD TASK IN COMPLETED WITH PRIORITIZED , TRY AGAIN"

@@ -15,6 +15,7 @@ export const DeletedTask = ({
   setAddTask,
   addTask,
   setPoints,
+  setCele,
 }) => {
   return (
     <>
@@ -54,7 +55,9 @@ export const DeletedTask = ({
             )}
             <button
               className="btn btn-delete"
-              onClick={() => handleTrash(id, setAddTask, addTask, setPoints)}
+              onClick={() => {
+                handleTrash(id, setAddTask, addTask, setPoints, setCele);
+              }}
             >
               Trash
             </button>

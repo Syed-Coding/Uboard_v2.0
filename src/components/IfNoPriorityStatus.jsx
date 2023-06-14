@@ -15,7 +15,7 @@ export const IfNoPriorityStatus = ({
       <span>
         {delete_date_time
           ? "Completed " + delete_date_time
-          : "DIRECTLY COMTD. " + create_date_time}
+          : "DIRECTLY COMTD. " + accesDateTime(create_date_time)}
       </span>
       {delete_date_time && (
         <>

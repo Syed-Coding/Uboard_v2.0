@@ -4,7 +4,6 @@ import { DeletedTask } from "./DeletedTask";
 import { useRef } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { SlLogout } from "react-icons/Sl";
-import { motion } from "framer-motion";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,8 +22,6 @@ import { OngoingTaskName } from "./OngoingTaskCheck";
 import { DeletedTaskName } from "./DeletedTaskCheck";
 import { handleLogout } from "../handlers/handleLogout";
 import UserSignupForm from "./UserSignUpform";
-// import celebration from "../celebration.json";
-// import Lottie from "lottie-react";
 
 const Task = () => {
   let checkLsAppState = localStorage.getItem("AppState");
@@ -59,6 +56,11 @@ const Task = () => {
   const [userSignUPData, setSignUpdata] = useState(valusersignupData);
   const inputRef = useRef("");
   const [userSignupStatus, setUserSignupStatus] = useState(valuserSignUpCheck);
+  const [cele, setCele] = useState(false);
+
+  useEffect(() => {
+    setCele(true);
+  }, [points]);
 
   useEffect(() => {
     localStorage.setItem("AppState", JSON.stringify(addTask));
@@ -155,16 +157,7 @@ const Task = () => {
         )}
 
         {userform && (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{
-              ease: "linear",
-              duration: 2,
-              delay: 0.1,
-              x: { duration: 1 },
-            }}
-          >
+          <div>
             <div
               className="hContainer | flex flex-between align-center justify-center"
               id="header"
@@ -192,7 +185,7 @@ const Task = () => {
                 ></Searchbar>
               </div>
             </div>
-
+            {/* <Clock format="HH:mm:ss" /> */}
             <div className="Task">
               <div className="Task-manager">
                 <div className="m-y-20 flex gap-15 flex-between">
@@ -208,7 +201,7 @@ const Task = () => {
                     />
                   </div>
 
-                  <Point points={points}></Point>
+                  <Point points={points} cele={cele}></Point>
                 </div>
 
                 <div className="flex align-center">
@@ -224,9 +217,11 @@ const Task = () => {
                     setsearchQuery={setsearchQuery}
                     setCompletionDays={setCompletionDays}
                     setFilterpriorityTaskStatus={setFilterpriorityTaskStatus}
+                    setCele={setCele}
                   ></FormSubmit>
 
                   <UserCompletionDays
+                    switchVal={switchVal}
                     completionDays={completionDays}
                     setCompletionDays={setCompletionDays}
                   />
@@ -238,9 +233,7 @@ const Task = () => {
                 ></InputSwitch>
 
                 <div className="Task-manager-board flex gap-15">
-                  {/* {celebrayionsvg && (
-                    <Lottie animationData={celebration}></Lottie>
-                  )} */}
+
 
                   <div
                     className="Task-manager-board-col Task-manager-board-left"
@@ -256,6 +249,7 @@ const Task = () => {
                             taskItem={taskItem}
                             setAddTask={setAddTask}
                             key={taskItem.id}
+                            setCele={setCele}
                           />
                         ))
                       : filteredOngoingArray?.map((taskItem) => (
@@ -263,6 +257,7 @@ const Task = () => {
                             taskItem={taskItem}
                             setAddTask={setAddTask}
                             key={taskItem.id}
+                            setCele={setCele}
                           />
                         ))}
                   </div>
@@ -282,6 +277,7 @@ const Task = () => {
                             setAddTask={setAddTask}
                             addTask={addTask}
                             setPoints={setPoints}
+                            setCele={setCele}
                           />
                         ))
                       : filtereddeletedArray?.map((taskItem) => (
@@ -291,6 +287,7 @@ const Task = () => {
                             setAddTask={setAddTask}
                             addTask={addTask}
                             setPoints={setPoints}
+                            setCele={setCele}
                           />
                         ))}
                   </div>
@@ -317,7 +314,7 @@ const Task = () => {
             </div>
 
             <ToastContainer></ToastContainer>
-          </motion.div>
+          </div>
         )}
       </div>
     </>

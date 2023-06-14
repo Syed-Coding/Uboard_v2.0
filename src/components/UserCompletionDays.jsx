@@ -1,6 +1,10 @@
 import React from "react";
 
-export const UserCompletionDays = ({ completionDays, setCompletionDays }) => {
+export const UserCompletionDays = ({
+  completionDays,
+  setCompletionDays,
+  switchVal,
+}) => {
   return (
     <div className="priority">
       <label className="form-control | flex align-center gap-10">
@@ -10,11 +14,12 @@ export const UserCompletionDays = ({ completionDays, setCompletionDays }) => {
           value={completionDays}
           minLength={1}
           maxLength={4}
-          onChange={(e) =>
-            setCompletionDays(e.target.value <= 0 ? 0 : e.target.value)
-          }
+          onChange={(e) => {
+            !switchVal &&
+              setCompletionDays(e.target.value <= 0 ? 0 : e.target.value);
+          }}
         />
-        EXP. Day(s)
+        EXPTD. Day(s)
       </label>
     </div>
   );

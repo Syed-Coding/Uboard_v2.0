@@ -1,6 +1,7 @@
 import { accesDateTime } from "../utils/accessDateTime";
 import { taskCompletetionDays } from "../utils/calculateDays";
-export const handleDelete = (id, setAddTask) => {
+export const handleDelete = (id, setAddTask, setCele) => {
+  // setCele(false);
   setAddTask((prev) => {
     return prev.map((ele) => {
       return ele.id === id
