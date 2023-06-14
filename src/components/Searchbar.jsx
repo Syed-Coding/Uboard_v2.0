@@ -1,5 +1,5 @@
 import React from "react";
-import { BiSearch } from "react-icons/Bi";
+import { AiOutlineSearch } from "react-icons/ai";
 
 export const Searchbar = ({ query, setAddInput, setsearchQuery }) => {
   return (
@@ -17,7 +17,7 @@ export const Searchbar = ({ query, setAddInput, setsearchQuery }) => {
             });
         }}
       />
-      <BiSearch className="buttonSearch"></BiSearch>
+      <AiOutlineSearch className="buttonSearch"></AiOutlineSearch>
     </span>
   );
 };
