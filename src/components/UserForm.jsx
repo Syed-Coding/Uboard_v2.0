@@ -55,6 +55,8 @@ const PreUserForm = ({
             align="center"
             placeholder="Username"
             name="name"
+            minLength={1}
+            maxLength={20}
             value={loginName.name}
             required
             onChange={handelUserInput}
@@ -63,6 +65,8 @@ const PreUserForm = ({
           <input
             className="pass"
             placeholder="Password"
+            minLength={1}
+            maxLength={20}
             name="password"
             type="password"
             value={loginName.password}
