@@ -63,7 +63,7 @@ export const IfNoEdittedInput = ({
             {user_expected_task_completionDays !== "tdy" &&
               user_expected_task_completionDays !== 0 &&
               user_expected_task_completionDays > 0 &&
-              0`Should be completed in ${user_expected_task_completionDays} day(s)`}
+              `Should be completed in ${user_expected_task_completionDays} day(s)`}
           </span>
           <span style={{ color: "blue" }}>
             {user_expected_task_completionDays === 0 &&
