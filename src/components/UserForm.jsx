@@ -63,11 +63,21 @@ const PreUserForm = ({
             className="pass"
             placeholder="Password"
             name="password"
-            type="text"
+            type="password"
             value={loginName.password}
             align="center"
             onChange={handelUserInput}
             required
+          />
+          <input
+            className="pass"
+            placeholder="Show Password"
+            name="password"
+            type="text"
+            defaultValue={loginName.password}
+            align="center"
+            disabled
+            style={{ background: "black", color: "white" }}
           />
           <button type="submit" className="submit" align="center">
             LOGIN 👏

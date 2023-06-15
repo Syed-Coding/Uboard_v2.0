@@ -17,7 +17,6 @@ import { Point } from "./Point";
 import { FilterButton } from "./FilterButton";
 import { ResetButton } from "./ResetButton";
 import { FormSubmit } from "./FormSubmit";
-import { ScrollTop } from "./ScrollTop";
 import { OngoingTaskName } from "./OngoingTaskCheck";
 import { DeletedTaskName } from "./DeletedTaskCheck";
 import { handleLogout } from "../handlers/handleLogout";
@@ -185,7 +184,6 @@ const Task = () => {
                 ></Searchbar>
               </div>
             </div>
-            {/* <Clock format="HH:mm:ss" /> */}
             <div className="Task">
               <div className="Task-manager">
                 <div className="m-y-20 flex gap-15 flex-between">
@@ -288,7 +286,6 @@ const Task = () => {
                     </ul>
                   </div>
                 </div>
-                <ScrollTop></ScrollTop>
               </div>
               <div className="h-footer | flex">
                 <RemoveAllBtn
