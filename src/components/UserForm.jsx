@@ -45,7 +45,8 @@ const PreUserForm = ({
     <>
       <div className="main">
         <p className="sign" align="center">
-          <span style={{ color: "red" }}>U- BOARD</span> LOGIN
+          <span style={{ color: "red" }}>U- BOARD</span>{" "}
+          <span style={{ color: "#a52aba" }}>LOGIN</span>
         </p>
         <form className="form1" onSubmit={handleLogin}>
           <input
@@ -71,16 +72,16 @@ const PreUserForm = ({
           />
           <input
             className="pass"
-            placeholder="Show Password"
+            placeholder="Password Will Show Here"
             name="password"
             type="text"
             defaultValue={loginName.password}
             align="center"
             disabled
-            style={{ background: "black", color: "white" }}
+            style={{ borderRadius: "1px", border: "1px solid black" }}
           />
           <button type="submit" className="submit" align="center">
-            LOGIN 👏
+            LOGIN
           </button>
         </form>
         <button

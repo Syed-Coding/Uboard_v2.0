@@ -45,19 +45,19 @@ function UserSignupForm({
             <input
               type="text"
               minLength={1}
-              maxLength={11}
+              maxLength={15}
               name="user_name"
               value={inputchange.user_name}
               required
               onChange={handleInput}
             />
-            <label>First name</label>
+            <label>Name</label>
           </div>
           <div className="user-box">
             <input
               type="text"
               minLength={1}
-              maxLength={11}
+              maxLength={20}
               value={inputchange.pass_word}
               name="pass_word"
               required
@@ -69,7 +69,7 @@ function UserSignupForm({
             <input
               type="text"
               minLength={1}
-              maxLength={11}
+              maxLength={20}
               value={inputchange.secret_id}
               name="secret_id"
               required
