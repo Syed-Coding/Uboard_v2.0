@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { OngoingTask } from "./OngoingTask";
 import { DeletedTask } from "./DeletedTask";
-import { useRef } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { SlLogout } from "react-icons/sl";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PreUserForm from "./UserForm";
+import { ScrollTop } from "./ScrollTop";
 import { Searchbar } from "./Searchbar";
 import { DropMenuSort } from "./DropMenuSort";
 import { InputSwitch } from "./InputSwitch";
@@ -48,12 +48,11 @@ const Task = () => {
   const [priorityCheck, setpriorityCheck] = useState(false);
   const [filterprioritytaskStatus, setFilterpriorityTaskStatus] =
     useState(false);
-  const [parent, enableAnimations] = useAutoAnimate(/* optional config */);
+  const [parent, enableAnimations] = useAutoAnimate();
   const [userform, SetUserFom] = useState(valuemainFormCheck);
   const [Hideloginform, setHideloginform] = useState(valueGetFormCheck);
   const [userLgin, SetUserLogin] = useState(valGetuserName);
   const [userSignUPData, setSignUpdata] = useState(valusersignupData);
-  const inputRef = useRef("");
   const [userSignupStatus, setUserSignupStatus] = useState(valuserSignUpCheck);
   const [cele, setCele] = useState(false);
 
@@ -78,9 +77,6 @@ const Task = () => {
     userSignupStatus,
     userSignUPData,
   ]);
-  useEffect(() => {
-    userform && inputRef.current.focus();
-  }, [switchVal, addTask]);
 
   const searchedItems = useMemo(() => {
     if (filterprioritytaskStatus) {
@@ -209,13 +205,11 @@ const Task = () => {
                     switchVal={switchVal}
                     setAddInput={setAddInput}
                     setAddTask={setAddTask}
-                    inputRef={inputRef}
                     priorityCheck={priorityCheck}
                     setpriorityCheck={setpriorityCheck}
                     setsearchQuery={setsearchQuery}
                     setCompletionDays={setCompletionDays}
                     setFilterpriorityTaskStatus={setFilterpriorityTaskStatus}
-                    setCele={setCele}
                   ></FormSubmit>
 
                   <UserCompletionDays
@@ -229,7 +223,6 @@ const Task = () => {
                   setSwitchVal={setSwitchVal}
                   switchVal={switchVal}
                 ></InputSwitch>
-
                 <div className="Task-manager-board flex gap-15">
                   <div className="Task-manager-board-col Task-manager-board-left">
                     <OngoingTaskName
@@ -243,7 +236,6 @@ const Task = () => {
                               taskItem={taskItem}
                               setAddTask={setAddTask}
                               key={taskItem.id}
-                              setCele={setCele}
                             />
                           ))
                         : filteredOngoingArray?.map((taskItem) => (
@@ -251,11 +243,11 @@ const Task = () => {
                               taskItem={taskItem}
                               setAddTask={setAddTask}
                               key={taskItem.id}
-                              setCele={setCele}
                             />
                           ))}
                     </ul>
                   </div>
+                  <ScrollTop></ScrollTop>
                   <div className="Task-manager-board-col Task-manager-board-right">
                     <DeletedTaskName
                       filterprioritytaskStatus={filterprioritytaskStatus}

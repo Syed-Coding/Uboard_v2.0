@@ -16,7 +16,6 @@ export const OngoingTask = ({
     reCreated,
     user_expected_task_completionDays,
   },
-  setCele,
   setAddTask,
 }) => {
   const [edittedinput, setEdittedInput] = useState(task);
@@ -59,7 +58,7 @@ export const OngoingTask = ({
           <button
             className="btn btn-delete"
             title="Move To Completed Task"
-            onClick={() => handleDelete(id, setAddTask, setCele)}
+            onClick={() => handleDelete(id, setAddTask)}
           >
             Done
           </button>

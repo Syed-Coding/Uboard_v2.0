@@ -11,13 +11,11 @@ export const FormSubmit = ({
   switchVal,
   setAddInput,
   completionDays,
-  inputRef,
   priorityCheck,
   setpriorityCheck,
   setsearchQuery,
   setCompletionDays,
   setFilterpriorityTaskStatus,
-  setCele,
 }) => {
   const handleEmoji = (emojiObject) => {
     setAddInput((prev) => prev + emojiObject.native);
@@ -40,8 +38,7 @@ export const FormSubmit = ({
           switchVal,
           priorityCheck,
           setAddTask,
-          setpriorityCheck,
-          setCele
+          setpriorityCheck
         )
       }
     >
@@ -58,7 +55,7 @@ export const FormSubmit = ({
           onChange={(e) => {
             setAddInput(e.target.value);
           }}
-          ref={inputRef}
+          autoFocus
         />
         <span
           className="emojiIcon"

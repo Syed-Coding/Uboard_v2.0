@@ -12,14 +12,13 @@ export const handleSubmit = (
   switchVal,
   priorityCheck,
   setAddTask,
-  setpriorityCheck,
-  setCele
+  setpriorityCheck
 ) => {
   e.preventDefault();
   setsearchQuery("");
   setCompletionDays(0);
   setFilterpriorityTaskStatus(false);
-  setCele(false);
+
   if (switchVal && priorityCheck) {
     return errorNotification(
       "CANNOT ADD TASK IN COMPLETED WITH PRIORITIZED , TRY AGAIN"
