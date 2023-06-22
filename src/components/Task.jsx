@@ -57,10 +57,12 @@ const Task = () => {
   const [cele, setCele] = useState(false);
 
   useEffect(() => {
+    // console.log("iinisde use1");
     setCele(true);
   }, [points]);
 
   useEffect(() => {
+    // console.log("iinisde use2");
     localStorage.setItem("AppState", JSON.stringify(addTask));
     localStorage.setItem("PointState", JSON.stringify(points));
     localStorage.setItem("userName", userLgin);
@@ -77,7 +79,9 @@ const Task = () => {
     userSignupStatus,
     userSignUPData,
   ]);
-
+  // if (true) {
+  //   return <div> loading</div>;
+  // }
   const searchedItems = useMemo(() => {
     if (filterprioritytaskStatus) {
       return addTask?.filter(

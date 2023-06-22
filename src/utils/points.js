@@ -2,21 +2,21 @@ import { successnotification } from "../userNotifications/userNotifications";
 
 export const point = (task, setPoints) => {
   const taskGoodSuccess = (day) => {
-    successnotification(`Didnot Set Completetion time , But you Made it in ${Math.floor(
+    successnotification(`Didnot Set Completetion Time , You Completed The Task In ${Math.floor(
       day
     )} Days.
       YOU GOT 5 POINTS 🎉🎉🎉`);
   };
   const taskBestSuccess = (day) => {
-    successnotification(`Very Good, You Completed The Task Before Your Expected Day. Made It in ${Math.floor(
+    successnotification(`Very Good, You Completed The Task Before Your Expected Days. Made It In ${Math.floor(
       day
-    )} Days Less.
+    )} Days.
        YOU GOT 25 POINTS 🏆🏆🏆`);
   };
   const taskOkSuccess = (day) => {
-    successnotification(` Good , But You Didnot Completed The Task Before Your Expected Day. Made It in ${Math.floor(
+    successnotification(` Good , But You Didnot Completed The Task Before Your Expected Days. Made It In ${Math.floor(
       day
-    )} Days More.
+    )} Days.
         REDUCED 15 POINTS 🙃🙃🙃`);
   };
   const [newtask] = task;
