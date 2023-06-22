@@ -39,9 +39,9 @@ export const point = (task, setPoints) => {
     newtask.user_expected_task_completionDays < newtask.task_completion_days
   ) {
     taskOkSuccess(newtask.task_completion_days);
-    setPoints((prev) => (prev - 15 < 0 ? 0 : prev - 15));
+    setPoints((prev) => (prev - 15 <= 0 ? 0 : prev - 15));
   } else if (
-    newtask.task_completion_days >= 0 &&
+    newtask.task_completion_days < 1 &&
     newtask.user_expected_task_completionDays === "tdy"
   ) {
     taskBestSuccess(newtask.task_completion_days);
@@ -51,6 +51,6 @@ export const point = (task, setPoints) => {
     newtask.user_expected_task_completionDays === "tdy"
   ) {
     taskOkSuccess(newtask.task_completion_days);
-    setPoints((prev) => (prev - 15 < 0 ? 0 : prev - 15));
+    setPoints((prev) => (prev - 15 <= 0 ? 0 : prev - 15));
   }
 };
