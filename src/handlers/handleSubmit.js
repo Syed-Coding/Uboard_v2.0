@@ -45,5 +45,3 @@ export const handleSubmit = (
   setpriorityCheck(false);
   successnotification("TASK ADDED SUCCESSFULLY");
 };
-
-// console.log("hii");
