@@ -82,7 +82,10 @@ const Task = () => {
   // if (true) {
   //   return <div> loading</div>;
   // }
+  // const p = []; // here it is not in state , so create memorty location on each rerendes, and woks the memo
+  // console.log(addTask);
   const searchedItems = useMemo(() => {
+    // console.log("inside usememo");
     if (filterprioritytaskStatus) {
       return addTask?.filter(
         (ele) =>
