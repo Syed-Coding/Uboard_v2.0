@@ -1,6 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import { successnotification } from "../userNotifications/userNotifications";
 import { errorNotification } from "../userNotifications/userNotifications";
+import { handleSortDefault } from "../handlers/handleSortDefault";
+
 export const handleSubmit = (
   e,
   setAddInput,
@@ -12,7 +14,8 @@ export const handleSubmit = (
   switchVal,
   priorityCheck,
   setAddTask,
-  setpriorityCheck
+  setpriorityCheck,
+  setUserSort
 ) => {
   e.preventDefault();
   setsearchQuery("");
@@ -43,5 +46,6 @@ export const handleSubmit = (
 
   setAddInput("");
   setpriorityCheck(false);
+  handleSortDefault(setAddTask, setUserSort);
   successnotification("TASK ADDED SUCCESSFULLY");
 };

@@ -6,7 +6,7 @@ import Picker from "@emoji-mart/react";
 
 export const FormSubmit = ({
   Addinput,
-
+  setUserSort,
   setAddTask,
   switchVal,
   setAddInput,
@@ -38,7 +38,8 @@ export const FormSubmit = ({
           switchVal,
           priorityCheck,
           setAddTask,
-          setpriorityCheck
+          setpriorityCheck,
+          setUserSort
         )
       }
     >

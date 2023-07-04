@@ -228,6 +228,7 @@ const Task = () => {
                     setsearchQuery={setsearchQuery}
                     setCompletionDays={setCompletionDays}
                     setFilterpriorityTaskStatus={setFilterpriorityTaskStatus}
+                    setUserSort={setUserSort}
                   ></FormSubmit>
 
                   <UserCompletionDays
