@@ -2,7 +2,7 @@ import React from "react";
 import { handleSort } from "../handlers/handleSort";
 
 export const DropMenuSort = ({ setAddTask, setUserSort, usersort }) => {
-  console.log(usersort);
+  // console.log(usersort);
 
   return (
     <select
