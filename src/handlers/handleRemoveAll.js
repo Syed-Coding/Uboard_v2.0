@@ -13,7 +13,8 @@ export const handleRemoveAll = (
   setCompletionDays,
   setpriorityCheck,
   setUserSignupStatus,
-  setSignUpdata
+  setSignUpdata,
+  setUserSort
 ) => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -35,6 +36,7 @@ export const handleRemoveAll = (
     })
     .then((result) => {
       if (result.isConfirmed) {
+        localStorage.clear(); // this is an additional security to clear
         setAddTask([]), setPoints(0), SetUserFom(false);
         setHideloginform(false);
         SetUserLogin("");
@@ -45,7 +47,8 @@ export const handleRemoveAll = (
         setpriorityCheck(false);
         setUserSignupStatus(true);
         setSignUpdata([]);
-        localStorage.clear(); // this is an additional security to clear
+        setUserSort("");
+
         swalWithBootstrapButtons.fire(
           "Deleted!",
           "Your tasks has been deleted 😔😔😔.",

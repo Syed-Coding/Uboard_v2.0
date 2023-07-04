@@ -39,6 +39,9 @@ const Task = () => {
     : 0;
   let usersignupData = localStorage.getItem("userData");
   let valusersignupData = usersignupData ? JSON.parse(usersignupData) : [];
+  let sorttedoption = localStorage.getItem("sortedValue")
+    ? localStorage.getItem("sortedValue")
+    : "";
   const [Addinput, setAddInput] = useState("");
   const [addTask, setAddTask] = useState(initalValueAppState);
   const [switchVal, setSwitchVal] = useState(false);
@@ -48,13 +51,15 @@ const Task = () => {
   const [priorityCheck, setpriorityCheck] = useState(false);
   const [filterprioritytaskStatus, setFilterpriorityTaskStatus] =
     useState(false);
-  const [parent, enableAnimations] = useAutoAnimate();
+  const [parent] = useAutoAnimate();
   const [userform, SetUserFom] = useState(valuemainFormCheck);
   const [Hideloginform, setHideloginform] = useState(valueGetFormCheck);
   const [userLgin, SetUserLogin] = useState(valGetuserName);
   const [userSignUPData, setSignUpdata] = useState(valusersignupData);
   const [userSignupStatus, setUserSignupStatus] = useState(valuserSignUpCheck);
   const [cele, setCele] = useState(false);
+  const [usersort, setUserSort] = useState(sorttedoption);
+  // console.log(usersort);
 
   useEffect(() => {
     // console.log("iinisde use1");
@@ -70,6 +75,7 @@ const Task = () => {
     localStorage.setItem("signupform", userSignupStatus);
     localStorage.setItem("mainform", userform);
     localStorage.setItem("userData", JSON.stringify(userSignUPData));
+    localStorage.setItem("sortedValue", usersort);
   }, [
     addTask,
     points,
@@ -78,6 +84,7 @@ const Task = () => {
     userform,
     userSignupStatus,
     userSignUPData,
+    usersort, // no need of this , becz usersort and addtask are in same place so add task is enough
   ]);
   // if (true) {
   //   return <div> loading</div>;
@@ -179,7 +186,11 @@ const Task = () => {
                   <SlLogout></SlLogout>
                   Logout
                 </button>
-                <DropMenuSort setAddTask={setAddTask}></DropMenuSort>
+                <DropMenuSort
+                  setUserSort={setUserSort}
+                  setAddTask={setAddTask}
+                  usersort={usersort}
+                ></DropMenuSort>
                 <Searchbar
                   query={query}
                   setAddInput={setAddInput}
@@ -301,6 +312,7 @@ const Task = () => {
                   setpriorityCheck={setpriorityCheck}
                   setUserSignupStatus={setUserSignupStatus}
                   setSignUpdata={setSignUpdata}
+                  setUserSort={setUserSort}
                 />
               </div>
             </div>

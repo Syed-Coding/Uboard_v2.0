@@ -14,6 +14,7 @@ export const RemoveAllBtn = ({
   setpriorityCheck,
   setUserSignupStatus,
   setSignUpdata,
+  setUserSort,
 }) => {
   return (
     <button
@@ -32,7 +33,8 @@ export const RemoveAllBtn = ({
           setCompletionDays,
           setpriorityCheck,
           setUserSignupStatus,
-          setSignUpdata
+          setSignUpdata,
+          setUserSort
         )
       }
     >

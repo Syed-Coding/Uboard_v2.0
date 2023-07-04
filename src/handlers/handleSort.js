@@ -1,8 +1,10 @@
-export const handleSort = (e, setAddTask) => {
+export const handleSort = (e, setAddTask, setUserSort) => {
   // < 0 .... a comes first
   //  0 .... nothing will change
   // > 0 .... b comes first
   if (e.target.value === "TASK_DFLT") {
+    // console.log(e.target.value);
+    setUserSort(e.target.value);
     setAddTask((prev) => {
       return prev.toSorted((a, b) => {
         const dateA = new Date(a.create_date_time);
@@ -21,6 +23,8 @@ export const handleSort = (e, setAddTask) => {
   }
 
   if (e.target.value === "TASK_ASC") {
+    setUserSort(e.target.value);
+
     setAddTask((prev) => {
       return prev.toSorted((a, b) => {
         const nameA = a.task.toUpperCase();
@@ -39,6 +43,8 @@ export const handleSort = (e, setAddTask) => {
   }
 
   if (e.target.value === "TASK_DESC") {
+    setUserSort(e.target.value);
+
     setAddTask((prev) => {
       return prev.toSorted((a, b) => {
         // return nameA.localeCompare(nameB);
@@ -57,6 +63,7 @@ export const handleSort = (e, setAddTask) => {
   }
 
   if (e.target.value === "DATE_DESC") {
+    setUserSort(e.target.value);
     setAddTask((prev) => {
       return prev.toSorted((a, b) => {
         const dateA = new Date(a.create_date_time);
