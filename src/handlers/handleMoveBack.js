@@ -6,7 +6,7 @@ export const handleMoveBack = (id, setAddTask) => {
       return ele.id === id
         ? {
             ...ele,
-            reCreated: accesDateTime(new Date()),
+            reCreated: new Date().getTime(),
             category: "ongoing",
           }
         : ele;

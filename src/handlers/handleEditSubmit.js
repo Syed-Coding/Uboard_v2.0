@@ -17,7 +17,7 @@ export const handleEditSubmit = (
         ? {
             ...ele,
             task: edittedinput,
-            edit_date_time: accesDateTime(new Date()),
+            edit_date_time: new Date().getTime(),
             edittedStatus: editted,
           }
         : ele;

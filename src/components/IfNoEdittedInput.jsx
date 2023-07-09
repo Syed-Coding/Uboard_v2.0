@@ -42,9 +42,9 @@ export const IfNoEdittedInput = ({
             </span>
             <span>
               {editted
-                ? "Editted " + edit_date_time
+                ? "Editted " + accesDateTime(edit_date_time)
                 : reCreated
-                ? "Recreated " + reCreated
+                ? "Recreated " + accesDateTime(reCreated)
                 : "Created " + accesDateTime(create_date_time)}
             </span>
             <span>{reCreated && editted && "Recreated " + reCreated}</span>
@@ -71,9 +71,9 @@ export const IfNoEdittedInput = ({
           </span>
           <span>
             {editted
-              ? "Editted " + edit_date_time
+              ? "Editted " + accesDateTime(edit_date_time)
               : reCreated
-              ? "Recreated " + reCreated
+              ? "Recreated " + accesDateTime(reCreated)
               : "Created " + accesDateTime(create_date_time)}
           </span>
           <span>{reCreated && editted && "Recreated " + reCreated}</span>

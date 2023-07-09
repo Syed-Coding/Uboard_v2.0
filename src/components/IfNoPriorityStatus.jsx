@@ -14,13 +14,13 @@ export const IfNoPriorityStatus = ({
       </span>
       <span>
         {delete_date_time
-          ? "Completed " + delete_date_time
+          ? "Completed " + accesDateTime(delete_date_time)
           : "DIRECTLY COMTD. " + accesDateTime(create_date_time)}
       </span>
       {delete_date_time && (
         <>
           <span>{"Created " + accesDateTime(create_date_time)}</span>
-          <span>{reCreated && "Recreated " + reCreated}</span>
+          <span>{reCreated && "Recreated " + accesDateTime(reCreated)}</span>
         </>
       )}
     </h4>

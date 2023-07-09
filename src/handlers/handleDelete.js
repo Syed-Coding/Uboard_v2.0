@@ -7,7 +7,7 @@ export const handleDelete = (id, setAddTask) => {
         ? {
             ...ele,
             category: "deleted",
-            delete_date_time: accesDateTime(new Date()),
+            delete_date_time: new Date().getTime(),
             task_completion_days: taskCompletetionDays(
               ele.create_date_time,
               new Date().getTime()
