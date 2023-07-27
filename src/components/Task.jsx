@@ -91,6 +91,10 @@ const Task = () => {
   // }
   // const p = []; // here it is not in state , so create memorty location on each rerendes, and woks the memo
   // console.log(addTask);
+  // const p = ["syed", "john", "rahul"];
+  // console.log(p.filter((ele) => ele.includes("s")));
+  // console.log(p.filter((ele) => ele.includes(""))); // will return all value sif ''
+  // console.log(p.filter((ele) => ele.includes(" ")));
   const searchedItems = useMemo(() => {
     // console.log("inside usememo");
     if (filterprioritytaskStatus) {
@@ -104,18 +108,18 @@ const Task = () => {
         return ele.task.toLowerCase().includes(query.toLowerCase());
       });
     }
-  }, [query, addTask, filterprioritytaskStatus]);
-
+  }, [query, filterprioritytaskStatus]);
   const filteredOngoingArray = useMemo(() => {
+    console.log("inside memo");
     return query
       ? searchedItems?.filter((ele) => ele.category === "ongoing")
       : addTask?.filter((ele) => ele.category === "ongoing");
-  }, [addTask, query]);
+  }, [addTask, searchedItems]);
   const filtereddeletedArray = useMemo(() => {
     return query
       ? searchedItems?.filter((ele) => ele.category === "deleted")
       : addTask?.filter((ele) => ele.category === "deleted");
-  }, [addTask, query]);
+  }, [addTask, searchedItems]);
 
   const filteredPriorttyOngoingTasks = useMemo(() => {
     return query
@@ -123,13 +127,15 @@ const Task = () => {
       : addTask?.filter(
           (task) => task.priority_status && task.category === "ongoing"
         );
-  }, [addTask, filterprioritytaskStatus, query]);
+  }, [addTask, searchedItems]);
 
   const filteredPriorttyCompletedTasks = useMemo(() => {
-    return addTask.filter(
-      (task) => task.priority_status && task.category === "deleted"
-    );
-  }, [addTask, filterprioritytaskStatus, query]);
+    return query
+      ? searchedItems?.filter((ele) => ele.category === "deleted")
+      : addTask.filter(
+          (task) => task.priority_status && task.category === "deleted"
+        );
+  }, [addTask, searchedItems]);
 
   return (
     <>

@@ -86,5 +86,22 @@ function UserSignupForm({
     </>
   );
 }
-
 export default UserSignupForm;
+
+// const name = "";
+// const name2 = "  ";
+// if (name) {
+//   console.log("i am empty string"); //false
+// }
+// if (name2) {
+//   console.log("i am not empy string , iam white space"); // true
+// }
+// if (!name2.trim()) {
+//   console.log("hiiii"); // true. here remove white space
+// }
+//The trim() method removes whitespace from both sides of a string.
+// console.log({name : "Welcome to Programiz!     z".trim()});
+// console.log({name : "   Welcome to Programiz!     z   ".trim()});
+// console.log({name : "Welcome to Programiz!     ".trim()});
+// console.log({name : "                   "});
+// console.log({name : "                  ".trim()});

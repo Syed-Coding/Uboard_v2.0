@@ -9,31 +9,19 @@ export const DropMenuSort = ({ setAddTask, setUserSort, usersort }) => {
       className="dropdownmenuContent"
       onClick={(e) => handleSort(e, setAddTask, setUserSort)}
     >
-      {/* <option disabled selected={usersort === "" ? true : false}>
+      {/* <option disabled selected={usersort === "" }>
         Select Your Sorting
       </option> */}
-      <option
-        value="TASK_DFLT"
-        selected={usersort === "TASK_DFLT" || usersort === "" ? true : false}
-      >
+      <option value="TASK_DFLT" selected={usersort === "TASK_DFLT"}>
         Default Sorting
       </option>
-      <option
-        value="TASK_ASC"
-        selected={usersort === "TASK_ASC" ? true : false}
-      >
+      <option value="TASK_ASC" selected={usersort === "TASK_ASC"}>
         Sort By Task Name ASC.
       </option>
-      <option
-        value="TASK_DESC"
-        selected={usersort === "TASK_DESC" ? true : false}
-      >
+      <option value="TASK_DESC" selected={usersort === "TASK_DESC"}>
         Sort By Task Name DESC.
       </option>
-      <option
-        value="DATE_DESC"
-        selected={usersort === "DATE_DESC" ? true : false}
-      >
+      <option value="DATE_DESC" selected={usersort === "DATE_DESC"}>
         Sort By Last Created
       </option>
     </select>

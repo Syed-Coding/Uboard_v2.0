@@ -23,19 +23,21 @@ const PreUserForm = ({
   };
 
   const handleLogin = (e) => {
+    console.log(userSignUPData);
     e.preventDefault();
-    const loginValue = userSignUPData.filter(
+    const loginValue = userSignUPData.find(
       (ele) =>
         ele.user_name.toLowerCase() === loginName.name.toLowerCase() &&
         ele.pass_word === loginName.password
     );
-    const UserFirstName = loginValue[0]?.user_name;
+    console.log(loginValue);
 
-    if (!loginValue[0])
+    if (!loginValue)
       return errorNotification(
         "SORRY YOU ARE NOT AUTHRIZED TO LOGIN. CONTACT ADMIN"
       );
-
+    const UserFirstName = loginValue?.user_name;
+    console.log(UserFirstName);
     SetUserFom(true);
     SetUserLogin(UserFirstName);
     setLoginName("");

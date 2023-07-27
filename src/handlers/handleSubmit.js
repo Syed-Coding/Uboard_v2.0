@@ -21,14 +21,14 @@ export const handleSubmit = (
   setsearchQuery("");
   setCompletionDays(0);
   setFilterpriorityTaskStatus(false);
+  if (!Addinput) {
+    return errorNotification("PLEASE ADD SOMETHING");
+  }
 
   if (switchVal && priorityCheck) {
     return errorNotification(
       "CANNOT ADD TASK IN COMPLETED WITH PRIORITIZED , TRY AGAIN"
     );
-  }
-  if (!Addinput) {
-    return errorNotification("PLEASE ADD SOMETHING");
   }
 
   const newTask = {
